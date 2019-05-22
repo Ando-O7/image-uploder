@@ -1,4 +1,4 @@
-package main
+package main // import "server"
 
 import "github.com/gin-conic/gin"
 
@@ -9,5 +9,5 @@ func main() {
 			"message": "ping",
 		})
 	})
-	r.Run(":8080")
+	r.Run(":8888")
 }
