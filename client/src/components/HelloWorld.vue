@@ -13,7 +13,7 @@
     data: function () {
       return {
         dropzoneOptions: {
-          url: 'http://localhost://8888/images',
+          url: `http://localhost:8888/images`,
           method: 'post'
         }
       }
