@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></vue-dropzone>
+    <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions" v-on:vdropzone-sending="sendingEvent"></vue-dropzone>
   </div>
 </template>
 
@@ -20,6 +20,12 @@
     },
     components: {
       vueDropzone: vue2Dropzone
+    },
+    methods: {
+      // Add uuid to file for form data.
+      sendingEvent: function(file, xhr, formData) {
+        formData.append('uuid', file,upload.uuid)
+      }
     }
   }
 </script>
