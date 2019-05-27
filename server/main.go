@@ -15,7 +15,7 @@ func main() {
         AllowMethods: []string{"GET", "POST", "DELETE", "OPTIONS"},
         AllowHeaders: []string{"*"},
     }))
-
     r.POST("/images", handler.Upload)
+    r.DELETE("/images/:uuid", handler.Delete)
     r.Run(":8888")
 }
