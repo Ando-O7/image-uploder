@@ -26,7 +26,7 @@
     methods: {
       // Add uuid to file for form data.
       sendingEvent: function(file, xhr, formData) {
-        formData.append('uuid', file,upload.uuid)
+        formData.append('uuid', file.upload.uuid)
       },
       removeEvent: function(file, error, xhr) {
         axios.delete(`http://localhost:8888/images/${file.upload.uuid}`).then(res => {
