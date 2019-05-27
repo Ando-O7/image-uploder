@@ -14,7 +14,8 @@
       return {
         dropzoneOptions: {
           url: `http://localhost:8888/images`,
-          method: 'post'
+          method: 'post',
+          addRemoveLinks: 'true'
         }
       }
     },
