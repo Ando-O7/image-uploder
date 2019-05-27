@@ -29,7 +29,7 @@
         formData.append('uuid', file,upload.uuid)
       },
       removeEvent: function(file, error, xhr) {
-        axios.delete(`http://localhost:8888/images/$(file.upload.uuid}`).then(res => {
+        axios.delete(`http://localhost:8888/images/${file.upload.uuid}`).then(res => {
           console.log(res.data)
         }).catch(err => {
           console.error(err)
