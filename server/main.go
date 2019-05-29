@@ -20,6 +20,7 @@ func main() {
 	// static file placement
 	r.Use(static.Serve("/", static.LocalFile("./images", true)))
 
+	r.GET("/images", handler.List)
     r.POST("/images", handler.Upload)
     r.DELETE("/images/:uuid", handler.Delete)
     r.Run(":8888")
