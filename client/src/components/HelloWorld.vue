@@ -35,6 +35,22 @@
           console.error(err)
         })
       }
+    },
+    mounted () {
+      axios.get('http://localhost:8888/images').then(res => {
+        res.data.forEach(res => {
+          // get filename
+          let filename = res.path.replace('http://localhost:8888/', '')
+          // get uuid
+          let id = filename.replace('.png', '')
+          // create file object
+          var file = {size: res.size, name: filename, type: "image/png", upload: {uuid: id}}
+          // set image data from code to form
+          this.$refs.myVueDropzone.manuallyAddFile(file, res.path)
+        })
+      }).catch(err => {
+        console.error(err)
+      })
     }
   }
 </script>
